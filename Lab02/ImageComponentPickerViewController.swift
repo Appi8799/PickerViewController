@@ -10,69 +10,55 @@ import UIKit
 class ImageComponentPickerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     
-
-    @IBOutlet weak var ImagePickerViewControl: UIImageView!
+    @IBOutlet weak var ImagePickerViewControl: UIPickerView!
+    @IBOutlet weak var ImagePickerViewControllerLabel: UILabel!
     
-    var pickerData: [String] = [String]()
+    let Red = ColourChannel.Red
+    let Blue = ColourChannel.Blue
+    
+    var ValueArray: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    }
-
-    @IBAction func SelectButton_Pressed(_ sender: UIButton) {
-        showImagePickerOptions()
+        buildValueArray()
+        
+        ImagePickerViewControl.selectRow(255, inComponent: Red.rawValue, animated: true)
+        ImagePickerViewControl.selectRow(255, inComponent: Blue.rawValue, animated: true)
+        
     }
     
-    func imagePicker(sourceType: UIImagePickerController.SourceType) -> UIImagePickerController {
-        let ImagePicker = UIImagePickerController()
-        ImagePicker.sourceType = sourceType
-        return ImagePicker
+    func buildValueArray()
+    {
+        for index in stride(from: 255, through: 0, by: -1)
+        {
+            ValueArray.append(String(index))
+        }
+    }
+    
+    @IBAction func SelectButton_Pressed(_ sender: UIButton) {
+        
+        let RedChannelIndex = ImagePickerViewControl.selectedRow(inComponent: Red.rawValue)
+        let BlueChannelIndex = ImagePickerViewControl.selectedRow(inComponent: Blue.rawValue)
+        
+        let RedChannel = CGFloat((ValueArray[RedChannelIndex] as NSString).floatValue)/255.0
+        let BlueChannel = CGFloat((ValueArray[BlueChannelIndex] as NSString).floatValue)/255.0
+        
+        ImagePickerViewControllerLabel.text = "Image Component Picker View Controller"
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 2
+        return 3
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 100
+        return 256
     }
     
-    func showImagePickerOptions(){
-        let alertVC = UIAlertController(title: "Pick a Photo", message: "Choose a picture from library or camera", preferredStyle: .actionSheet)
-        
-        //Image picker for camera
-        let cameraAction = UIAlertAction(title: "Camera", style: .default){
-            [weak self] (action) in
-            
-            //Capture selt to avoid retain cycles
-            guard let self = self else{
-                return
-            }
-            let cameraImagePicker = self.imagePicker(sourceType: .camera)
-            self.present(cameraImagePicker, animated: true) {
-                
-            }
-        }
-        
-        //Image Picker for Library
-        let libraryAction = UIAlertAction(title: "Library", style: .default) { [weak self] action in
-            
-            //Capture selft to avoid retain cycles
-            guard let self = self else {
-                return
-            }
-            let libraryImagePicker = self.imagePicker(sourceType: .photoLibrary)
-            self.present(libraryImagePicker, animated: true) {
-                
-            }
-        }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        alertVC.addAction(cameraAction)
-        alertVC.addAction(libraryAction)
-        alertVC.addAction(cameraAction)
-        self.present(alertVC, animated: true, completion: nil)
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return ValueArray[row]
     }
     
 }
+    
 

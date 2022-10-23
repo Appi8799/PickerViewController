@@ -89,6 +89,98 @@
             </objects>
             <point key="canvasLocation" x="1591" y="-208"/>
         </scene>
+        <!--ImagePicker-->
+        <scene sceneID="9ZE-dH-jcl">
+            <objects>
+                <viewController id="CIq-RP-EeR" customClass="ImageComponentPickerViewController" customModule="Lab02" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a1p-SL-uK7">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NgS-ek-OaD">
+                                <rect key="frame" x="0.0" y="172" width="390" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="CIq-RP-EeR" id="8qq-hc-v4q"/>
+                                    <outlet property="delegate" destination="CIq-RP-EeR" id="n6y-eL-K9Y"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drn-rL-cJP">
+                                <rect key="frame" x="141" y="401" width="108" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <connections>
+                                    <action selector="SelectButton_Pressed:" destination="CIq-RP-EeR" eventType="touchUpInside" id="1L1-PI-J5Z"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKb-uW-2d4">
+                                <rect key="frame" x="16" y="584" width="358" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="G1O-7W-73S"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="ImagePicker" image="arrow.right.doc.on.clipboard" catalog="system" id="pr8-y2-2VU"/>
+                    <connections>
+                        <outlet property="ImagePickerViewControl" destination="NgS-ek-OaD" id="CdV-AB-I9R"/>
+                        <outlet property="ImagePickerViewControllerLabel" destination="cKb-uW-2d4" id="dbu-Vr-d9P"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ss3-D7-JqM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="896.92307692307691" y="397.39336492890993"/>
+        </scene>
+        <!--DependentPicker-->
+        <scene sceneID="nY8-tw-Kic">
+            <objects>
+                <viewController id="mJb-iB-CcD" customClass="DependantComponentPickerViewController" customModule="Lab02" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uBi-6O-DWa">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XRd-h4-yZr">
+                                <rect key="frame" x="0.0" y="166" width="390" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="mJb-iB-CcD" id="eso-0C-UIH"/>
+                                    <outlet property="delegate" destination="mJb-iB-CcD" id="xOD-vf-87P"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFy-QO-ty3">
+                                <rect key="frame" x="141" y="410" width="108" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <connections>
+                                    <action selector="SelectButton_Pressed:" destination="mJb-iB-CcD" eventType="touchUpInside" id="6aP-au-UWU"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jeZ-cs-V1F">
+                                <rect key="frame" x="16" y="620" width="358" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uqX-Xr-2He"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="DependentPicker" image="link.circle.fill" catalog="system" id="5xP-Z4-Dqn"/>
+                    <connections>
+                        <outlet property="DependentPickerViewControl" destination="XRd-h4-yZr" id="TpJ-NE-9cC"/>
+                        <outlet property="DependentPickerViewControllerLabel" destination="jeZ-cs-V1F" id="1X3-Jb-ILJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uiq-i1-jbh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1591" y="476"/>
+        </scene>
         <!--MultiPicker-->
         <scene sceneID="ph0-4x-sPO">
             <objects>
@@ -137,82 +229,6 @@
             </objects>
             <point key="canvasLocation" x="2295" y="85"/>
         </scene>
-        <!--ImagePicker-->
-        <scene sceneID="BGy-Uz-jpg">
-            <objects>
-                <viewController id="Ydh-fw-qL5" customClass="ImageComponentPickerViewController" customModule="Lab02" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gco-uP-g8U">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aUZ-U6-obn">
-                                <rect key="frame" x="42" y="161" width="306" height="162"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="Ydh-fw-qL5" id="bHa-NP-7zj"/>
-                                    <outlet property="delegate" destination="Ydh-fw-qL5" id="VzL-SD-rcb"/>
-                                </connections>
-                            </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FM6-ae-OOS">
-                                <rect key="frame" x="151" y="405" width="89" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Select"/>
-                                <connections>
-                                    <action selector="SelectButton_Pressed:" destination="Ydh-fw-qL5" eventType="touchUpInside" id="PUm-86-PR7"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="mKF-O3-tqi"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="ImagePicker" image="esim" catalog="system" id="C4c-9H-P6R"/>
-                    <connections>
-                        <outlet property="ImagePickerViewControl" destination="aUZ-U6-obn" id="LCS-RO-bgL"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="C98-NI-keG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="896.92307692307691" y="540.99526066350711"/>
-        </scene>
-        <!--DependantPicker-->
-        <scene sceneID="5mV-Hh-VIr">
-            <objects>
-                <viewController id="Cx9-pq-ztO" customClass="DependantComponentPickerViewController" customModule="Lab02" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="IAf-QW-bSw">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0iW-81-ckH">
-                                <rect key="frame" x="41" y="146" width="306" height="162"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="Cx9-pq-ztO" id="xXy-6Q-u0I"/>
-                                    <outlet property="delegate" destination="Cx9-pq-ztO" id="fTu-6R-zXV"/>
-                                </connections>
-                            </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7B-Gh-C3b">
-                                <rect key="frame" x="151" y="387" width="89" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Select"/>
-                                <connections>
-                                    <action selector="SelectButton_Pressed:" destination="Cx9-pq-ztO" eventType="touchUpInside" id="aB9-ZO-39s"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="xT3-Lo-BHd"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="DependantPicker" image="forward.frame.fill" catalog="system" id="rT4-I7-oVZ"/>
-                    <connections>
-                        <outlet property="DependentPickerViewControl" destination="0iW-81-ckH" id="eDC-6w-qwD"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Llj-ou-qgO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1591" y="516"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="LtT-DD-dGa">
             <objects>
@@ -227,8 +243,8 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="qcu-YI-c1H"/>
                         <segue destination="taZ-wL-3HL" kind="relationship" relationship="viewControllers" id="4OC-hp-pws"/>
                         <segue destination="dXG-Aw-oJb" kind="relationship" relationship="viewControllers" id="TWA-qd-4V9"/>
-                        <segue destination="Cx9-pq-ztO" kind="relationship" relationship="viewControllers" id="lEa-2u-CRo"/>
-                        <segue destination="Ydh-fw-qL5" kind="relationship" relationship="viewControllers" id="wvu-HN-OHa"/>
+                        <segue destination="CIq-RP-EeR" kind="relationship" relationship="viewControllers" id="yOd-hm-0C8"/>
+                        <segue destination="mJb-iB-CcD" kind="relationship" relationship="viewControllers" id="nqG-jp-jZ9"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aht-1R-Yhv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -237,10 +253,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.right.doc.on.clipboard" catalog="system" width="116" height="128"/>
         <image name="calendar" catalog="system" width="128" height="107"/>
-        <image name="esim" catalog="system" width="128" height="112"/>
-        <image name="forward.frame.fill" catalog="system" width="128" height="91"/>
         <image name="lineweight" catalog="system" width="128" height="109"/>
+        <image name="link.circle.fill" catalog="system" width="128" height="123"/>
         <image name="list.dash.header.rectangle" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
